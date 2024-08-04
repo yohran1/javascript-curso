@@ -52,3 +52,24 @@
     console.log(error.message)
  }
  console.log("Continuando programa!")
+
+ // callBack => função que executa dentro de uma outra função
+
+ function cumprimentar(nome, callback){
+    console.log("Olá " + nome)
+    callback()
+ }
+ function mostrarSaudacao(){
+    console.log("Como você está?")
+ }
+cumprimentar("['Name']", mostrarSaudacao)
+// outra alternativa
+cumprimentar("['Name']", function(){
+    console.log("Como você está?")
+})
+
+// setTimeout => adicionará um timer para executar a função/método ou tratamento de erros, abrange muitas possibilidades.
+function mostrarMensagem(){
+    console.log("Esse mensagem será exibida após 2 segundos!")
+}
+setTimeout(mostrarMensagem, 2000)
