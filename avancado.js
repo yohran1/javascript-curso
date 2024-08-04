@@ -99,7 +99,31 @@ promessa.then((mensagem) => {
 // Usar/executar todas Promises com método .all
 const promise_1 = Promise.resolve(3)
 const promise_2 = new Promise((resolve, reject)=>{
-    setTimeout(resolve, 2500, "Testando")
+    setTimeout(resolve, 1500, "Testando")
 })
 
 Promise.all([promise_1, promise_2]).then(valores => console.log(valores))
+
+// Async Await - a função só irá ser executada quando retornar uma resposta vindo de API, Banco de dados ao realizar um fetch
+async function obterValor(){
+    const promessa = new Promise((resolve, reject)=>{
+        setTimeout(() => resolve("Valor obtido"), 2000) // com o resolve no async await ele funciona como then() da promise pega o valor e retorna ele
+    })
+    const valor = await promessa
+    console.log(valor)
+}
+obterValor()
+
+// com o reject ele funciona como o catch da promise, pega o erro da promise
+async function obterValorComErro() {
+    try {
+        const promessa = new Promise((resolve, reject)=>{
+            setTimeout(() => reject("Valor com erro"), 2000)
+        })
+        const valor = await promessa
+        console.log(valor)  
+    } catch (error) {
+        console.log(error)
+    }
+}
+obterValorComErro()
