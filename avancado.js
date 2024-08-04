@@ -29,4 +29,8 @@
 
  console.log(frase)
  console.log(palavra)
- 
+
+ const frase_2 = "javaScript é incrível!"
+// Método de identificação de strings
+ console.log(frase_2.startsWith("java")) // Identifica a primeira palavra da string e retorna um boolean (true, false)
+ console.log(frase_2. endsWith("!"))
