@@ -73,3 +73,7 @@ function mostrarMensagem(){
     console.log("Esse mensagem será exibida após 2 segundos!")
 }
 setTimeout(mostrarMensagem, 2000)
+
+setTimeout(function(){
+    console.log("Oi")
+}, 1000)
