@@ -72,8 +72,34 @@ cumprimentar("['Name']", function(){
 function mostrarMensagem(){
     console.log("Esse mensagem será exibida após 2 segundos!")
 }
+/*
 setTimeout(mostrarMensagem, 2000)
 
 setTimeout(function(){
     console.log("Oi")
 }, 1000)
+*/
+// Promises - Recebe em callback com duas propriedades, onde se passa a condição e com if e else funcionará quase como um try, catch
+const promessa = new Promise((resolve, reject) => {
+    const condicao = false
+    if(condicao){
+        resolve("A condição é verdadeira!")
+    }else{
+        reject("A condição é falsa")
+    }
+})
+// then pegará o retorno que vier de resposta/verdadeira da promise 
+promessa.then((mensagem) => {
+    console.log(mensagem)
+}).catch((error) => { // catch irá retornar o reject/erro da promise 
+    console.log(error)
+})
+
+// obs: Bibliotecas feitas que são "promise based"
+// Usar/executar todas Promises com método .all
+const promise_1 = Promise.resolve(3)
+const promise_2 = new Promise((resolve, reject)=>{
+    setTimeout(resolve, 2500, "Testando")
+})
+
+Promise.all([promise_1, promise_2]).then(valores => console.log(valores))
