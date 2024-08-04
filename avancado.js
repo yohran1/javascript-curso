@@ -127,3 +127,16 @@ async function obterValorComErro() {
     }
 }
 obterValorComErro()
+
+// JSON (javascript object notation)
+// {nome: "teste"} = {"nome": "teste}
+// Padroniza a comunicação
+// front-end e back-end em uma só linguagem
+const objeto = {nome: "João", idade: 30}
+
+const jsonString = JSON.stringify(objeto)
+const objeto2 = JSON.parse(jsonString)
+
+console.log(jsonString)
+console.log(typeof jsonString)
+console.log(objeto2)
