@@ -1,6 +1,9 @@
 body {
     font-family: Arial, sans-serif;
   }
+  #meuId.novaClasse{
+    color: red;
+  }
   
   #meuId {
     padding: 20px;

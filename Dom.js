@@ -27,3 +27,12 @@ console.log(link.getAttribute("href")) // verifica se há atributo passado, e mo
 console.log(link.hasAttribute("target")) // verifica se há atributo passado e retorna um Boolean, true or false
 link.removeAttribute("target") // remove o atributo especificado
 console.log(link)
+
+// Manipulação de classes de CSS
+const elementoDeClasse = document.querySelector("#meuId")
+
+elementoDeClasse.classList.add("novaClasse") // Adiciona uma classe a TAG
+elementoDeClasse.classList.remove("minhaClasse") // Remove a classe da TAG
+elementoDeClasse.classList.toggle("outraClasse") // se a TAG tiver uma classe o .classList.toggle remove e adiciona uma classe com o nome passado ao método, caso não tenha uma class sendo passada ele passa o nome da class
+// elementoDeClasse.classList.toggle("outraClasse")
+console.log(elementoDeClasse)
