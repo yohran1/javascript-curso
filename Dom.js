@@ -41,3 +41,18 @@ console.log(elementoDeClasse)
 const elemento3 = document.querySelector("#meuId")
 elemento3.style.color = "blue"
 // elemento3.style.backgroundColor = "red"
+
+// Navegação entre nós - elemento pai body, section, nav, footer, div etc.. são filhas do body
+const elemento4 = document.querySelector("#meuInput")
+const pai = elemento4.parentNode // Com .parentNode você pega o elemento pai do elemento em questão.
+
+console.log(elemento4)
+console.log(pai)
+
+// Obter o primeiro Filho do elemento do pai
+const primeiroFilho = pai.firstChild
+console.log(primeiroFilho)
+
+// Obter o ultimo filho do elemento pai
+const ultimoFilho = pai.lastChild
+console.log(ultimoFilho)
