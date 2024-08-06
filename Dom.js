@@ -106,3 +106,10 @@ document.querySelector("#elementoFilho").addEventListener("click", (event)=>{ //
     event.stopPropagation() // Com .stopPropagation só é executado o evento do elemento em questão.
     console.log("Elemento Filho")
 })
+
+// Denegação de eventos
+document.querySelector("#elementoPai").addEventListener("click", (event)=>{ // Pegando o elemento pai e adicionando evento de click
+    if(event.target.matches(".classeDosFilhos")){ // Verificando se houver um elemento filho com a classe passada, irá ser executada o evento do pai denegando o evento para o filho, porem no filho ou no pai, não podem ter o .stopPropagation para que possa ser passado essa denegação.
+        console.log("Evento delegado para o filho")
+    }
+})
