@@ -1,4 +1,4 @@
-// DOM - Document Object Model, eventos de DOM
+// DOM - Document Object Model, eventos de DOM - tudo haver com o document.
 
 // Selecionar elementos
 const elementoPorID = document.getElementById("meuId")
@@ -56,3 +56,14 @@ console.log(primeiroFilho)
 // Obter o ultimo filho do elemento pai
 const ultimoFilho = pai.lastChild
 console.log(ultimoFilho)
+
+// Manipulação de estrutura do DOM
+const novoELemento = document.createElement("div") // Criando um elemento div com javaScript
+console.log(novoELemento)
+
+novoELemento.textContent = "Minha div de Javascript" // Adicionado texto a div
+document.body.appendChild(novoELemento) // Colocando a div no HTML
+
+document.body.insertBefore(novoELemento, pai) // Com .insertBefore está sendo passado a div criada no JS na posição antes do elemento passado depois da virgula
+
+// document.body.removeChild(elementoPorID) // Removendo um elemento do HTML
