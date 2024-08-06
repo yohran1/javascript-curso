@@ -36,3 +36,8 @@ elementoDeClasse.classList.remove("minhaClasse") // Remove a classe da TAG
 elementoDeClasse.classList.toggle("outraClasse") // se a TAG tiver uma classe o .classList.toggle remove e adiciona uma classe com o nome passado ao método, caso não tenha uma class sendo passada ele passa o nome da class
 // elementoDeClasse.classList.toggle("outraClasse")
 console.log(elementoDeClasse)
+
+// Manipular o CSS
+const elemento3 = document.querySelector("#meuId")
+elemento3.style.color = "blue"
+// elemento3.style.backgroundColor = "red"
