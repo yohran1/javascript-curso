@@ -97,3 +97,12 @@ form.addEventListener("submit", function(event){ // o evento de submit é quando
 
     console.log("Formulário enviado")
 })
+
+// Propagação de eventos - eventos do elemento pai propagam no elemento filho OBS: Sempre que disparar um elemento pai, também vai disparar o evento no filho. 
+document.querySelector("#elementoPai").addEventListener("click", ()=>{
+    console.log("Clique capturado no pai")
+})
+document.querySelector("#elementoFilho").addEventListener("click", (event)=>{ // O elemento filho ao executar o evento, também irá executar o evento do pai, podendo da dor de cabeça
+    event.stopPropagation() // Com .stopPropagation só é executado o evento do elemento em questão.
+    console.log("Elemento Filho")
+})
