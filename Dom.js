@@ -67,3 +67,33 @@ document.body.appendChild(novoELemento) // Colocando a div no HTML
 document.body.insertBefore(novoELemento, pai) // Com .insertBefore está sendo passado a div criada no JS na posição antes do elemento passado depois da virgula
 
 // document.body.removeChild(elementoPorID) // Removendo um elemento do HTML
+
+// Eventos
+
+//click
+const botao = document.querySelector("button")
+
+botao.addEventListener("click", ()=>{ // .addEventListener Adiciona um evento ao elemento, e uma callback para executar o evento
+    console.log("Botão clicado")
+})
+
+// mouse
+const elemento5 = document.querySelector("#meuFormulario")
+elemento5.addEventListener("mouseover", ()=>{
+    console.log("O mouse passou aqui")
+})
+
+// teclado
+const campoInput = document.querySelector("#meuInput")
+campoInput.addEventListener("keydown", ()=>{
+    console.log("Tecla pressionada")
+})
+
+// formulário
+const form = document.querySelector("form")
+
+form.addEventListener("submit", function(event){ // o evento de submit é quando o formulário é enviado
+    event.preventDefault() // com preventDefault é retirado o recarregamento da página ao enviar o formulário
+
+    console.log("Formulário enviado")
+})
