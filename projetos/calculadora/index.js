@@ -37,6 +37,18 @@ function inserePonto(){
         atualizarDisplay()
     }
 }
+function insereOperador(event){
+    if(operacaoAtual !== ""){ // Se não houver nenhum número no display
+        if(!calculando){ // Se estiver calculando
+            if(operador !== null){ // se o operador é diferente de nulo ira ser calculado o valor
+                calcula()
+            }
+            valorAnterior = operacaoAtual // Se o operador for nulo, vai receber a operação atual 
+            operacaoAtual = "" // vai iniciar o valor de uma nova operação
+        }
+        operador = event.target.textContent // se estiver calculando será posto o operador
+    }
+}
 
 function calcula(){
     let resultado = null
@@ -63,15 +75,4 @@ function calcula(){
     atualizarDisplay()
 }
 
-function insereOperador(event){
-    if(operacaoAtual !== ""){ // Se não houver nenhum número no display
-        if(!calculando){ // Se não estiver calculando
-            if(operador !== null){ // se o operador é diferente de nulo ira ser calculado o valor
-                calcula()
-            }
-            valorAnterior = operacaoAtual // Se o operador for nulo, vai receber a operação atual 
-            operacaoAtual = "" // vai iniciar o valor de uma nova operação
-        }
-        operador = event.target.textContent // se não estiver calculando erá ser posto o operador
-    }
-}
+
