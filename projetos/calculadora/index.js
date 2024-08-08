@@ -69,10 +69,16 @@ function calcula(){
             resultado = operandoAnterior / operandoAtual
         break
     }
-    operacaoAtual = String(resultado)
-    valorAnterior = operacaoAtual
-    calculando = true
-    atualizarDisplay()
+    // operacaoAtual = String(resultado)
+    // valorAnterior = operacaoAtual
+    // calculando = true
+    // atualizarDisplay()
+    if(operacaoAtual !== ""){
+        operacaoAtual = String(resultado)
+        valorAnterior = operacaoAtual
+        calculando = true
+        atualizarDisplay()
+    }
 }
 
 
