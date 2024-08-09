@@ -40,3 +40,11 @@ console.log(array2)
 const soma2 = (...args) => args.reduce((total, numero) => total + numero, 0)
 
 console.log(soma2(1,2,3,4,5,6,7))
+
+// Default parameters - padrão de parâmetros
+function saudacao(nome = "visitante"){
+    console.log(`Olá ${nome}`)
+
+}
+saudacao()
+saudacao("Yohran")
