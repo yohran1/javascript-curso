@@ -2,6 +2,7 @@
 const display = document.querySelector("#displayInput")
 const botaoIgual = document.querySelector(".igual")
 const botaoPonto = document.querySelector(".ponto")
+const botaoClear = document.querySelector(".clear")
 const botoesNumeros = document.querySelectorAll(".num")
 const botoesOperadores = document.querySelectorAll(".operador")
 
@@ -16,6 +17,7 @@ botaoPonto.addEventListener("click", inserePonto)
 botoesNumeros.forEach((botao) => botao.addEventListener("click", insereNumeros))
 botoesOperadores.forEach((botao)=> botao.addEventListener("click", insereOperador))
 botaoIgual.addEventListener("click", calcula)
+botaoClear.addEventListener("click", limpar)
 
 // Funções
 function atualizarDisplay(){
@@ -24,10 +26,10 @@ function atualizarDisplay(){
 function insereNumeros(event){
 
     if(calculando){
-        operacaoAtual = event.target.textContent
+        operacaoAtual = event.target.innerText
         calculando = false // Se não estiver mais calculando retornará falso
     }else{
-        operacaoAtual += event.target.textContent // se não estiver calculando tera uma concatenação (+=)
+        operacaoAtual += event.target.innerText // se não estiver calculando tera uma concatenação (+=)
     }
     atualizarDisplay()
 }
@@ -46,11 +48,13 @@ function insereOperador(event){
             valorAnterior = operacaoAtual // Se o operador for nulo, vai receber a operação atual 
             operacaoAtual = "" // vai iniciar o valor de uma nova operação
         }
-        operador = event.target.textContent // se estiver calculando será posto o operador
+        operador = event.target.innerText // se estiver calculando será posto o operador
     }
 }
 
 function calcula(){
+    if(operador === null) return
+
     let resultado = null
     const operandoAnterior = parseFloat(valorAnterior) // converter para numero, pois valor dos inputs vem como string
     const operandoAtual = parseFloat(operacaoAtual) // o valor atual que está na tela
@@ -66,13 +70,10 @@ function calcula(){
             resultado = operandoAnterior * operandoAtual
         break
         case "/":
-            resultado = operandoAnterior / operandoAtual
+            resultado = operandoAtual === 0 ? 'Error' : operandoAnterior / operandoAtual
         break
     }
-    // operacaoAtual = String(resultado)
-    // valorAnterior = operacaoAtual
-    // calculando = true
-    // atualizarDisplay()
+
     if(operacaoAtual !== ""){
         operacaoAtual = String(resultado)
         valorAnterior = operacaoAtual
@@ -81,4 +82,11 @@ function calcula(){
     }
 }
 
+function limpar(){
+    operacaoAtual = ""
+    operador = null
+    valorAnterior = ""
+    calculando = false
+    atualizarDisplay()
+}
 
