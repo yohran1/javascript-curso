@@ -42,9 +42,30 @@ const soma2 = (...args) => args.reduce((total, numero) => total + numero, 0)
 console.log(soma2(1,2,3,4,5,6,7))
 
 // Default parameters - padrão de parâmetros
-function saudacao(nome = "visitante"){
+function saudacao(nome = "visitante"){ // a prop já recebe um valor padrão caso não for passado nada a prop
     console.log(`Olá ${nome}`)
-
 }
 saudacao()
 saudacao("Yohran")
+
+// objects literals enhancements - melhorias em literais de objetos
+// exemplo: {nome: "exemple"}
+// Criar um objeto baseado em variáveis
+
+const nomeNovo = "Irineu"
+const idadeNova = 24
+
+const pessoaNova = {nomeNovo, idadeNova}
+const pessoaNova1 = {nome: nomeNovo, idade: idadeNova}
+console.log(pessoaNova1)
+
+
+const saudacaoObject = {
+    dizerOi(){
+        console.log("oi")
+    },
+    dizerTchau(){
+        console.log("tchau")
+    }
+}
+saudacaoObject.dizerTchau()
