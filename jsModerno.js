@@ -69,3 +69,38 @@ const saudacaoObject = {
     }
 }
 saudacaoObject.dizerTchau()
+
+// classes e heranças
+class Pessoa {
+    constructor(nome, idade){
+        this.nome = nome
+        this.idade = idade
+    }
+
+    falar(){
+        console.log(`Olá pessoal meu nome é ${this.nome}`)
+    }
+}
+
+const joao = new Pessoa("João", 34)
+console.log(joao)
+joao.falar()
+
+const irineu = new Pessoa("Irineu", 24)
+
+class Funcionario extends Pessoa{ // A class Funcionario herdou todos os métodos de parâmetros da class Pessoa 
+    constructor(nome, idade, salario){
+        super(nome, idade) // Chamando os parâmetros da Class Pai 'Pessoa'
+        this.salario = salario
+    }
+    falarFuncionario(){
+        super.falar()
+        console.log(`Eu ganho R$${this.salario}`)
+        
+    }
+}
+
+const Filisteu = new Funcionario("Filisteu", 24, 3200)
+console.log(Filisteu)
+Filisteu.falar()
+Filisteu.falarFuncionario()
