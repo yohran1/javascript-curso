@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css" />
-    <script src="./index.js"></script>
+    <script src="./index.js" defer></script>
     
     <title>Quiz</title>
 </head>
 <body>
-    <h1>Quiz</h1>
+    <div class="quiz-container">
+        <h1>Quiz Interativo</h1>
+        <p id="score">Pontuação: 0</p>
+        <p id="wrong">Erros: 0</p>
+        <p id="question"></p>
+        <div id="choises">
+            <button id="choise1" class="choise"></button>
+            <button id="choise2" class="choise"></button>
+            <button id="choise3" class="choise"></button>
+            <button id="choise4" class="choise"></button>
+        </div>
+        <button id="next">Próxima</button>
+    </div>
 
 </body>
 </html>
